@@ -4,6 +4,8 @@ import { DonutsComponent } from './donuts/donuts.component';
 import { FamousPersonDetailComponent } from './famous-person-detail/famous-person-detail.component';
 import { FamousPeopleComponent } from './famous-people/famous-people.component';
 import { DonutDetailComponent } from './donut-detail/donut-detail.component';
+import { CommonModule } from '@angular/common';
+
 
 
 const appRoutes: Routes = [
@@ -18,7 +20,7 @@ const appRoutes: Routes = [
     DonutsComponent,
     DonutDetailComponent
   ],
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes), CommonModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
