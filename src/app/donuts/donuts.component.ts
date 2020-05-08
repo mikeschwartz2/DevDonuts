@@ -10,7 +10,7 @@ import { DonutService } from '../donut-service.service';
 export class DonutsComponent implements OnInit {
   donuts:Donuts;
 
-  constructor(private DonutService:DonutService) { }
+  constructor(private DonutService: DonutService) { }
 
   ngOnInit(): void {
     this.DonutService.getDonuts().subscribe( 

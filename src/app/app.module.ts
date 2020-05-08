@@ -18,7 +18,8 @@ import { DonutDetailComponent } from './donut-detail/donut-detail.component';
 
 
 @NgModule({
-  declarations: [AppComponent,IconSetComponent, FamousPersonDetailComponent, FamousPeopleComponent],
+  declarations: [AppComponent,IconSetComponent, FamousPersonDetailComponent, FamousPeopleComponent, DonutsComponent,
+    DonutDetailComponent],
   imports: [
     SparkAngularModule,
     BrowserAnimationsModule,

@@ -10,17 +10,17 @@ import { CommonModule } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: 'donut', component: DonutsComponent },
-  { path: 'donut/:id', component: DonutDetailComponent }
+  { path: 'donut/:id', component: DonutDetailComponent },
+  { path: 'famous-people', component: FamousPeopleComponent },
   // { path: '', redirectTo: '/people', pathMatch: 'full' },
   // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   declarations: [
-    DonutsComponent,
-    DonutDetailComponent
+    
   ],
-  imports: [RouterModule.forRoot(appRoutes), CommonModule],
+  imports: [RouterModule.forRoot(appRoutes), CommonModule, ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

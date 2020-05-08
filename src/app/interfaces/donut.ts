@@ -1,5 +1,6 @@
 export interface Donuts {
     results: Donut[];
+    ref:string;
 }
 
 export interface Donut {
