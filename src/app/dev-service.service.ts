@@ -7,11 +7,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DevService {
   apiUrl = 'https://grandcircusco.github.io/demo-apis/computer-science-hall-of-fame.json';
+  fileName = 'http://localhost:4200/assets/api/famousAPI.json';
+  strToRemove = ']}';
 
   constructor(private http:HttpClient) { }
 
   getDevs() {
     return this.http.get<Devs>(this.apiUrl);
   }
+
+
+
+
+
 
 }

@@ -1,6 +1,29 @@
-<h2>Famous People</h2>
+<div *ngIf="showLoading" class="loading">
+    <div class="load-content">
+        <h2>Loading...</h2>
+        <mat-progress-bar mode="indeterminate">Loading...</mat-progress-bar>
+    </div>  
+</div>
+
+    <h3>Add Famous Person</h3>
+    <div class="famous-form">
+        <label>First Name</label><br />
+        <input type="text" [(ngModel)]="addFirstName" id=""/><br />
+        <label>Last Name</label><br />
+        <input type="text" [(ngModel)]="addLastName" id=""/><br />
+        <label>Innovation</label><br />
+        <input type="text" [(ngModel)]="addInovation" id=""/><br />
+        <label>Year</label><br />
+        <input type="text" [(ngModel)]="addYear" id=""/><br /><br />
+        <button (click)="addPerson(addFirstName, addLastName, addInovation, addYear)" id="add-person">Add Person</button>
+    </div>
+
+    <button (click)="deleteRow()" id="add-person">Test</button>
+
+<hr>
 <sprk-accordion>
-    <sprk-accordion-item  *ngFor="let d of devs?.complete"
+    <h2 class="accordion-head">Famous People</h2>
+    <sprk-accordion-item  *ngFor="let d of devs?.complete; index as i;"
       title="{{d.firstName}} {{d.lastName}}"
       additionalClasses="sprk-u-mbs"
       additionalHeadingClasses="sprk-b-TypeDisplaySeven"
@@ -11,6 +34,29 @@
         {{d.innovation}}
         {{d.year}}
       </p>
+      <br/>
+      <div *ngIf="showEdit" class="edit-popup">
+        <h4>Edit</h4>
+        <label>First Name</label><br/>
+        <input type="text" [(ngModel)]="editFirstName" /><br />
+
+        <label>Last Name</label><br/>
+        <input type="text" [(ngModel)]="editLastName" /><br />
+
+        <label>Innovation</label><br/>
+        <input type="text" [(ngModel)]="editInnovation" /><br />
+
+        <label>Year</label><br/>
+        <input type="text" [(ngModel)]="editedYear" /><br />
+        <button (click)="editDev(editId, editFirstName, editLastName, editInnovation, editYear)">Update Dev</button>
+    </div>
+      <div class="edit">
+        <button (click)="displayEdit(i)">Edit</button>
+      </div>
+      
     </sprk-accordion-item>
 
   </sprk-accordion>
+
+
+  
